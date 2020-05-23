@@ -92,6 +92,25 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(this, winnerOfGame + "is the winner of game", Toast.LENGTH_SHORT).show();
 
                 }
+                else{
+
+                    boolean gameState = true;
+
+                    for(Player counterState : playerChoice){
+
+                        if(counterState == Player.unplayed){
+
+                            gameState = false;
+                        }
+
+                    }
+                    if(gameState){
+
+                        Toast.makeText(this,  "It's a draw", Toast.LENGTH_SHORT).show();
+                        btnReset.setVisibility(View.VISIBLE);
+
+                    }
+                }
 
             }
         }
